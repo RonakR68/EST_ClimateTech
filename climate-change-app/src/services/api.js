@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = process.env.REACT_APP_API_URL;
 console.log(API_URL);
 export const fetchClimateChanges = async () => {
-    return await axios.get(API_URL);
+    return await axios.get(`${API_URL}/api/climate-changes`);
 };
 
 export const fetchClimateChangeById = async (id) => {
