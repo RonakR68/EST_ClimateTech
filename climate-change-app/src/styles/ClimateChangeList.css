@@ -1,0 +1,99 @@
+/* General List Layout */
+.climate-change-list {
+  margin: 20px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+/* List Title */
+.climate-change-list h3 {
+  font-size: 3rem; /* Increased font-size */
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* List Container */
+.climate-change-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Increased gap between items */
+  padding-left: 0;
+}
+
+/* List Item Styling */
+.climate-change-list li {
+  background-color: #ffffff;
+  padding: 25px; /* Increased padding */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s ease-in-out;
+  min-height: 60px; /* Increased height of each box */
+}
+
+/* Hover Effects */
+.climate-change-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Item Title Styling */
+.climate-change-list li h2 {
+  font-size: 2.5rem; /* Increased font-size */
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+/* Item Description */
+.climate-change-list li p {
+  font-size: 1.4rem; /* Increased font-size */
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 20px; /* Increased space below description */
+}
+
+/* Disaster/Link Section */
+.climate-change-list li .climate-causes {
+  font-size: 1.3rem; /* Slightly larger font for causes */
+  color: #2980b9;
+  margin-top: 15px;
+}
+
+.climate-change-list li .climate-causes a {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.climate-change-list li .climate-causes a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .climate-change-list {
+    padding: 0 10px;
+  }
+
+  .climate-change-list h1 {
+    font-size: 2.2rem; /* Slightly reduced for smaller screens */
+  }
+
+  h1 {
+    justify-content: center;
+    text-align: center;
+  }
+  .climate-change-list li {
+    padding: 20px; /* Adjusted padding for smaller screens */
+    min-height: 160px; /* Reduced minimum height */
+  }
+
+  .climate-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .climate-header .climate-image {
+    width: 100%;
+    height: auto;
+  }
+}
