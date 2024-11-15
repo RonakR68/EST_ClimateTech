@@ -7,7 +7,11 @@ const climateChangeRoutes = require('./routes/climateChangeRoutes');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+const client_base_url = process.env.CLIENT_BASE_URL;
+//app.use(cors());
+app.use(cors({
+  origin: `${client_base_url}`
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, {
