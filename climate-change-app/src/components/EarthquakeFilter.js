@@ -51,10 +51,33 @@ const EarthquakeFilterSort = () => {
 
     // Effect to apply filters when year, month, or sort order changes
     useEffect(() => {
-        setFilteredData(filterData);
+        setLoading(true);
+        const timeout = setTimeout(() => {
+            setFilteredData(filterData);
+            setLoading(false);
+        }, 500);
+
+        return () => clearTimeout(timeout); // Cleanup to prevent memory leaks
     }, [filterData]);
 
+    // Handlers to immediately show loading
+    const handleYearChange = (e) => {
+        setLoading(true);
+        setSelectedYear(e.target.value);
+    };
+
+    const handleMonthChange = (e) => {
+        setLoading(true);
+        setSelectedMonth(e.target.value);
+    };
+
+    const handleSortOrderChange = (e) => {
+        setLoading(true);
+        setSortOrder(e.target.value);
+    };
+
     const handleResetFilters = () => {
+        setLoading(true);
         setSelectedYear('2023');
         setSelectedMonth('January');
         setSortOrder('asc');
@@ -74,7 +97,7 @@ const EarthquakeFilterSort = () => {
                     <select
                         id="year"
                         value={selectedYear}
-                        onChange={(e) => setSelectedYear(e.target.value)}
+                        onChange={handleYearChange}
                         style={{ padding: '8px', fontSize: '16px', borderRadius: '4px' }}
                     >
                         {years.map((year) => (
@@ -90,7 +113,7 @@ const EarthquakeFilterSort = () => {
                     <select
                         id="month"
                         value={selectedMonth}
-                        onChange={(e) => setSelectedMonth(e.target.value)}
+                        onChange={handleMonthChange}
                         style={{ padding: '8px', fontSize: '16px', borderRadius: '4px' }}
                     >
                         {months.map((month) => (
@@ -106,7 +129,7 @@ const EarthquakeFilterSort = () => {
                     <select
                         id="sort"
                         value={sortOrder}
-                        onChange={(e) => setSortOrder(e.target.value)}
+                        onChange={handleSortOrderChange}
                         style={{ padding: '8px', fontSize: '16px', borderRadius: '4px' }}
                     >
                         <option value="asc">Ascending</option>
