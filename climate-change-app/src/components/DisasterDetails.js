@@ -11,7 +11,12 @@ const DisasterDetails = () => {
     const getDisaster = async () => {
       try {
         const result = await fetchDisasterById(id);
-        setDisaster(result.data);
+        console.log(result); // Log the response to see the structure
+        if (result.data) {
+          setDisaster(result.data);
+        } else {
+          console.log("No data found for this disaster.");
+        }
       } catch (error) {
         console.error("Error fetching disaster details:", error);
       }
@@ -19,7 +24,9 @@ const DisasterDetails = () => {
     getDisaster();
   }, [id]);
 
-  if (!disaster) return <p className="loading">Loading...</p>;
+  if (disaster === null) {
+    return <p>Loading disaster details...</p>;
+  }
 
   return (
     <div className="disaster-details">
@@ -77,18 +84,6 @@ const DisasterDetails = () => {
           </ul>
         ) : (
           <p>No mitigation strategies listed.</p>
-        )}
-      </div>
-      <div className='details-section'>
-        <h4>Associated Climate Change:</h4>
-        {disaster.climateChange ? (
-          <p>
-            <a href={`/climate-change/${disaster.climateChange}`}>
-              View Climate Change Details
-            </a>
-          </p>
-        ) : (
-          <p>No associated climate change found.</p>
         )}
       </div>
     </div>

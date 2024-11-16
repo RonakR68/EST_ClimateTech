@@ -1,30 +1,32 @@
-/* ClimateChangeDetails.css */
-
 /* General Layout */
 .climate-change-details {
-  background-color: #f7f7f7;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  max-width: 1000px;
-  margin: 20px auto;
+  background-color: rgba(240, 244, 248, 0.85); /* Slight transparency */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  max-width: 1100px;
+  margin: 30px auto;
+  font-family: 'Arial', sans-serif;
 }
 
 /* Header section with image and summary */
 .climate-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+  border-bottom: 2px solid rgba(172, 179, 171, 0.1); /* Lighter border */
+  padding-bottom: 20px;
 }
 
 .climate-header .climate-image {
-  width: 250px;
-  height: 250px;
+  width: 280px;
+  height: 280px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-right: 20px;
+  border-radius: 12px;
+  margin-right: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .climate-summary {
@@ -32,32 +34,33 @@
 }
 
 .climate-summary h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 15px;
   color: #2c3e50;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 .climate-summary .climate-description {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.25rem;
+  line-height: 1.7;
   color: #7f8c8d;
   margin-bottom: 20px;
 }
 
 /* Causes Section */
 .climate-causes {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .climate-causes h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #2980b9;
-  margin-bottom: 8px;
-  margin-left: 10px;
-  margin-top: 8px;
+  margin-bottom: 15px;
 }
 
 .climate-causes ul {
@@ -66,29 +69,36 @@
 }
 
 .cause-item {
-  background-color: #ecf0f1;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  background-color: rgba(236, 240, 241, 0.9); /* Slight transparency */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .cause-item h4 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #34495e;
+}
+
+.cause-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Disasters Section */
 .climate-disasters {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .climate-disasters h3 {
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: #e74c3c;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .climate-disasters ul {
@@ -97,30 +107,72 @@
 }
 
 .disaster-item {
-  background-color: #f5f6fa;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease;
+  background-color: rgba(245, 246, 250, 0.9); /* Slight transparency */
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease-in-out;
 }
 
 .disaster-item:hover {
-  background-color: #dfe6e9;
+  background-color: rgba(223, 230, 233, 0.9); /* Slightly lighter transparency */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .disaster-item a {
   color: #e74c3c;
   text-decoration: none;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .disaster-item a:hover {
   text-decoration: underline;
+  color: #c0392b;
+}
+
+/* Analysis Section */
+.climate-analysis {
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
 }
 
 .analysis-iframe {
   width: 100%;
-  height: 90%;
+  height: 600px;
   border: none;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+button {
+  background-color: #2980b9;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #3498db;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #2980b9;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(236, 240, 241, 0.9); /* Slight transparency */
 }

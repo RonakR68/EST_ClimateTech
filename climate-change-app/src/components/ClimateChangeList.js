@@ -16,7 +16,7 @@ const ClimateChangeList = () => {
 
   return (
     <div className="climate-change-list">
-      <h1>Effects of Climate Changes in Indonesia</h1>
+      <h1>Climate Changes and Disasters in Indonesia</h1>
       <ul>
         <h3>
           {climateChanges.map((climateChange) => (
