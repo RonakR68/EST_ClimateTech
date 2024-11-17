@@ -10,7 +10,9 @@ const app = express();
 const client_base_url = process.env.CLIENT_BASE_URL;
 //app.use(cors());
 console.log(`Client base URL: ${client_base_url}`);
-app.use(cors());
+app.use(cors({
+  origin: `${client_base_url}`
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, {
