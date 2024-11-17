@@ -11,8 +11,16 @@ const client_base_url = process.env.CLIENT_BASE_URL;
 //app.use(cors());
 console.log(`Client base URL: ${client_base_url}`);
 app.use(cors({
-  origin: `${client_base_url}`,
+  origin: (origin, callback) => {
+    const whitelist = [process.env.CLIENT_BASE_URL, 'http://localhost:3000'];
+    if (!origin || whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 }));
 app.use(express.json());
 
