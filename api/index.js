@@ -11,7 +11,9 @@ const client_base_url = process.env.CLIENT_BASE_URL;
 //app.use(cors());
 console.log(`Client base URL: ${client_base_url}`);
 app.use(cors({
-  origin: `${client_base_url}`
+  origin: 'https://est-climate-tech.vercel.app', 
+  methods: ['GET', 'POST'], 
+  allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
 app.use(express.json());
 
