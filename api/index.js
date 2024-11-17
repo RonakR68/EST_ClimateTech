@@ -10,11 +10,7 @@ const app = express();
 const client_base_url = process.env.CLIENT_BASE_URL;
 //app.use(cors());
 console.log(`Client base URL: ${client_base_url}`);
-app.use(cors({
-  origin: 'https://est-climate-tech.vercel.app', 
-  methods: ['GET', 'POST'], 
-  allowedHeaders: ['Content-Type', 'Authorization'], 
-}));
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, {
